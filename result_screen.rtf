@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 add_faults -all\
+ 29424 faults were added to fault list.\
+run_fault_sim -sequential\
+ ------------------------------------------------------------------------------\
+ Begin sequential fault simulation of 28698 faults on 30316 external patterns.\
+ -----------------------------------------------------------\
+ #faults    pass #faults   cum. #faults     test    process\
+ simulated  detect/total   detect/active  coverage  CPU time\
+ ---------  -------------  -------------  --------  --------\
+ 1581         1205   1581    1205  27493     4.23%     50.98\
+ 3274         1433   1693    2638  26060     9.23%     80.91\
+ 4758         1288   1484    3926  24772    13.83%    105.81\
+ 6246         1333   1488    5259  23439    18.57%    127.86\
+ 7932         1384   1686    6643  22055    23.39%    156.40\
+ 9666         1652   1734    8295  20403    29.16%    175.64\
+ 11265        1475   1599    9770  18928    34.33%    198.43\
+ 12832        1476   1567   11246  17452    39.53%    220.76\
+ 14447        1475   1615   12721  15977    44.69%    242.49\
+ 16015        1184   1568   13905  14793    48.84%    285.98\
+ 17649        1510   1634   15415  13283    54.11%    312.61\
+ 19243        1411   1594   16826  11872    59.03%    352.74\
+ 20785        1412   1542   18238  10460    64.00%    376.73\
+ 22313        1400   1528   19638   9060    68.94%    400.53\
+ 23825        1393   1512   21031   7667    73.81%    425.87\
+ 25628        1717   1803   22748   5950    79.79%    446.47\
+ 27434        1777   1806   24525   4173    85.99%    462.15\
+ 28698        1185   1264   25710   2988    90.14%    480.02\
+ Fault simulation completed: #faults_simulated=28698, test_coverage=90.14%, CPU time=480.02\
+# # Create reports\
+report_summaries\
+     Uncollapsed Stuck Fault Summary Report\
+ -----------------------------------------------\
+ fault class                     code   #faults\
+ ------------------------------  ----  ---------\
+ Detected                         DT      25710\
+ Possibly detected                PT        314\
+ Undetectable                     UD        726\
+ ATPG untestable                  AU          0\
+ Not detected                     ND       2674\
+ -----------------------------------------------\
+ total faults                             29424\
+ test coverage                            90.14%\
+ -----------------------------------------------\
+            Pattern Summary Report\
+ -----------------------------------------------\
+ #internal patterns                           0\
+ #external patterns (dumpports_rtl.openMSP430.vcd)  30316\
+     #full_sequential patterns            30316\
+ -----------------------------------------------\
+write_faults output_fault_list.txt -all -replace\
+ Write faults completed: 29424 faults were written into file "output_fault_list.txt".\
+report_faults -level \{100 1\} -verbose > report_faults_verbose.txt\
+report_faults -level \{5 100\} > report_faults.txt\
+#\
+quit}
